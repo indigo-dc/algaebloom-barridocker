@@ -21,7 +21,8 @@ WORKDIR="$TEMPW"
 # Extract input
 echo Extracting input
 
-find "$INPUTDIR" -name "*.tar.gz" -exec tar xfz {} --no-same-owner -C "$WORKDIR" \; || exit 1
+#find "$INPUTDIR" -name "*.tar.gz" -exec tar xfz {} --no-same-owner -C "$WORKDIR" \; || exit 1
+cp $INPUTDIR/* $WORKDIR || exit 1
 cd "$WORKDIR" || exit 2
 
 echo Listing directory content:
